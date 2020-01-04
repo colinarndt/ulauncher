@@ -44,12 +44,12 @@ class IPLookupExtension(Extension):
             out_arr = {}
 
             out_arr["IP"] = response["ip"]
-            location = [response["city"], response["country_name"]]
+            location = [response["city"], response["region_code"], response["country_name"]]
 
             location = ", ".join(filter(None, location))
             location = location + " (%s)" % response["country_code"] if response["country_code"] != None else ""
             out_arr["Location"] = location
-            out_arr["Coordiates"] = "%s, %s" % (response["latitude"], response["longitude"])
+            out_arr["Coordinates"] = "%s, %s" % (response["latitude"], response["longitude"])
             out_arr["Calling code"] = response["calling_code"]
             out_arr["Languages"] = ", ".join(obj["name"] for obj in response["languages"])
             out_arr["ISP"] = response["asn"]["name"]
