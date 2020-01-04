@@ -1,6 +1,6 @@
 {
     "required_api_version": "^2.0.0",
-    "name": "IP Lookup",
+    "name": "IP Lookup Fork",
     "description": "IP lookup extension for ULauncher",
     "developer_name": "me@munim.net",
     "icon": "images/icon.png",
