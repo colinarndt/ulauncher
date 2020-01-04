@@ -48,11 +48,11 @@ class IPLookupExtension(Extension):
 
             location = ", ".join(filter(None, location))
             location = location + " (%s)" % response["country_code"] if response["country_code"] != None else ""
+            out_arr["Type"] = ", ".join(obj["type"] for obj in response["asn"])
             out_arr["Location"] = location
-            out_arr["Coordinates"] = "%s, %s" % (response["latitude"], response["longitude"])
-            out_arr["Calling code"] = response["calling_code"]
-            out_arr["Languages"] = ", ".join(obj["name"] for obj in response["languages"])
             out_arr["ISP"] = response["asn"]["name"]
+            out_arr["Coordinates"] = "%s, %s" % (response["latitude"], response["longitude"])
+            out_arr["Languages"] = ", ".join(obj["name"] for obj in response["languages"])
             out_arr["Currency"] = "%s (%s)" % (response["currency"]["name"], response["currency"]["code"])
 
             return out_arr
