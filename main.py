@@ -44,7 +44,7 @@ class IPLookupExtension(Extension):
             out_arr = {}
 
             out_arr["IP"] = response["ip"]
-            location = [response["city"], response["region_code"], response["country_name"]]
+            location = [response["city"], response["region_code"], response["country_name"], response["emoji_flag"]]
 
             location = ", ".join(filter(None, location))
             location = location + " (%s)" % response["country_code"] if response["country_code"] != None else ""
